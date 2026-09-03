@@ -1,202 +1,205 @@
-<div align="center">
-  <p align="center">
-    <a href="https://github.com/cv-cat/Douyin_Spider" target="_blank" align="center" alt="Go to Douyin_Spider Website">
-      <picture>
-        <img width="220" src="./author/logo.jpg" alt="Douyin_Spider logo">
-      </picture>
-    </a>
-  </p>
-  <div align="center">
-      <a href="https://www.python.org/">
-          <img src="https://img.shields.io/badge/python-3.7%2B-blue" alt="Python 3.7+">
-      </a>
-      <a href="https://nodejs.org/zh-cn/">
-          <img src="https://img.shields.io/badge/nodejs-18%2B-blue" alt="NodeJS 18+">
-      </a>
-  </div>
-  
-  # 🎶DouYin_Spider
-  
-</div>
+# 抖音内容运营一体化平台
 
+> 从「竞品数据采集 → AI 内容分析 → 脚本/混剪生产 → 数据看板」的抖音内容运营闭环。
 
-## ❤️Sponsor
-
-> [想出现在这里？](mailto:992822653@qq.com)
-
-<details open>
-<summary>点击折叠</summary>
-
-<div align="center">
-
-[![FastAIToken](https://github.com/TheSmallHanCat/flow2api/blob/main/static/sponsors/fastaitoken-banner.png)](https://www.fastaitoken.com/register?aff=48J4VXUABAAV)
-
-</div>
-
-**FastAIToken** 是面向开发者的 AI API 聚合平台，支持 OpenAI、Claude、Gemini 等主流大模型，兼容 OpenAI API 协议，可无缝接入 **Claude Code、Codex、Gemini CLI、Cherry Studio、Cline、Continue** 等各类 AI 开发工具。平台采用 **充值 1:1（1 元 = 1 美元 API 额度）**，帮助开发者以更低成本、更高效率地使用全球领先的大模型服务。
-
-平台提供多个可选分组与公开状态页，开发者可根据成本、响应速度和稳定性自由选择不同渠道，并享受 **7×24 小时真人技术支持**（非机器人）。
-
-**主要做 AI 开发接入？可以试试 [FastAIToken](https://www.fastaitoken.com/register?aff=48J4VXUABAAV)，兼容 Codex / Claude Code / Gemini CLI 等主流工具。**
-
+本项目在开源项目 [DouYin_Spider](https://github.com/cv-cat/Douyin_Spider)（抖音数据采集 / 直播间监听 / 私信收发）基础上二次开发，保留原有爬虫能力的同时，新增了品牌管理、竞品发现、AI 视频分析、脚本生成、投流分析、竞品价格调研、意向客户分析、热点雷达、智能混剪（含 TTS 配音）等 AI 增值能力，并提供 Web 控制台（Flask + 原生 JS）。
 
 ---
 
+## ✨ 核心功能
 
-</details>
+### 1. 抖音数据采集
+- 关键词搜索（视频 / 用户 / 直播），支持排序、发布时间、时长、搜索范围筛选
+- 用户信息、全部作品、粉丝 / 关注列表
+- 作品详情（播放、点赞、评论、分享）与评论抓取
+- 推荐流、系统通知、批量下载（视频 / 图片）并导出 Excel
 
-**✨ 专业的抖音数据采集与交互解决方案，支持数据爬取、直播间监听、私信收发等功能**
+### 2. 竞品分析
+- **品牌管理**：创建品牌画像（品类 / 目标人群 / 产品描述 / 风格调性 / 卖点）
+- **竞品发现**：同赛道三步评估（粉丝量级门槛 → 数据稳定向好 → 内容可复制性 AI 评分）+ 跨赛道推荐
+- **竞品价格调研**：淘宝 / 1688 等平台按关键词抓取商品价格，多平台对比，导出 CSV
+- **竞品广告分析**：竞品视频投流策略分析
 
-大模型时代，自动化是每个开发者都绕不开的课题。
-当你想让 AI Agent 真正落地到抖音——自动处理私信、感知直播间动态、驱动内容互动——第一道墙往往不是模型能力，而是**平台通信能力的缺失**。
+### 3. 监听中心
+- 博主监听列表管理，自动拉取监听博主最新视频
+- 每日定时调度（10:00 扫描新博主，11:00 监听新视频），支持手动触发
 
-本项目做的事很简单：把这道墙拆掉。
+### 4. AI 视频内容分析（多模态）
+- 文本结构（钩子 / 正文 / CTA）、视频类型、画面场景、情绪基调
+- 产品分析（品类 / 卖点 / 受众 / 痛点）、营销策略、分镜脚本（5–15 个核心分镜）
+- 批量分析、历史记录、Excel 导出
 
-**⚠️ 严禁用于发布不良信息、违法内容！本项目仅供学习与技术研究使用，如有侵权请联系作者删除，后果自负。**
+### 5. AI 脚本生成
+- 基于对标视频结构生成参考脚本（Hook / Body / CTA / 完整脚本）
+- 按视频类型生成脚本模板，支持多版本对比与 Excel 导出
 
-## 🌟 功能特性
+### 6. 投流分析
+- 基于互动数据 + 内容结构，AI 输出投流建议、预算分配、受众定向、ROI 预测、风险提示
 
-- ✅ **多维度数据采集**
-  - 用户主页信息 / 作品详情
-  - 评论区数据（含多级回复）
-  - 智能搜索（视频 / 用户 / 直播）
-  - 关注 / 粉丝列表
-  - 消息通知 / 收藏列表 / 推荐流
-- 🎙️ **直播间实时监听**
-  - 弹幕消息 / 礼物（含送礼对象）/ 进场 / 关注 / 点赞 / 房间热度
-  - 直播间发送弹幕消息
-  - 直播间点赞
-- 💬 **抖音私信收发**
-  - WebSocket 实时接收私信（文本 / 表情包 / 语音 / 图片 / 分享视频）
-  - 主动发送私信
-  - 创建 / 查询会话列表
-- 🤝 **互动操作**
-  - 点赞视频
-  - 发布评论 / 回复评论
-  - 收藏 / 移动 / 取消收藏作品
-- 🚀 **高性能架构**
-  - 自动重试机制 / 断线重连
-- 🔒 **安全稳定**
-  - 抖音最新 API 适配
-  - 异常处理机制
-  - proxy 代理
-- 🎨 **便捷管理**
-  - 结构化目录存储
-  - 格式化输出（JSON / EXCEL / MEDIA）
+### 7. 数据看板
+- 视频互动数据统计（总播放 / 点赞 / 互动率），按品牌 / 博主 / 类型 / 时间筛选
+- 趋势折线图与对比柱状图（Chart.js）
 
-## 🎨效果图
-### 处理后的所有用户
-![image](https://github.com/cv-cat/DouYin_Spider/assets/94289429/3f3ff858-c443-4a68-bae6-1d16ef43011d)
-### 某个用户所有的视频\图集
-![image](https://github.com/cv-cat/DouYin_Spider/assets/94289429/fa6f5e65-7e3c-4abf-b140-cd20c33d3b43)
-### 某个视频\图集具体的内容
-![image](https://github.com/cv-cat/DouYin_Spider/assets/94289429/16cfc027-6186-4914-bca4-901f886a9b82)
-### 某个直播时的具体弹幕发言和礼物数据
-![image](https://github.com/cv-cat/DouYin_Spider/assets/94289429/e2cde1f1-6309-44fe-8aa3-bca2821bf30d)
-### 保存的excel
-![image](https://github.com/user-attachments/assets/5dfd8fb4-7597-4f54-af6a-9ab8ba766b7c)
+### 8. 意向客户分析
+- 输入视频链接，AI 抓取评论区并逐条判定「高 / 中 / 低 / 无」购买意向
 
+### 9. 视频智能混剪（含 TTS 配音）
+- **素材库**：视频上传、列表、删除
+- **AI 智能分类**：标签分类 + 内容时间线片段标注（精确时间戳）
+- **文案匹配混剪**：文案逐句语义匹配视频片段 → FFmpeg 按时间戳截取拼接
+- **TTS 配音**：CosyVoice 预置多音色 + 上传音频克隆音色
+- **镜头-台词对照**：自动生成镜头与台词对照，前端可视化预览
 
+### 10. 热点雷达（TrendRadar）
+- 多平台热点聚合（头条 / 百度 / 微博 / 抖音 / 知乎等）
+- AI 智能筛选分析，生成 HTML 热点报告，支持定时运行
 
-## 🛠️ 快速开始
-### ⛳运行环境
-- Python 3.7+
-- Node.js 18+
+### 11. 直播间 & 私信管理
+- 直播间实时监听（弹幕 / 礼物 / 进场 / 关注 / 点赞 / 热度），发弹幕、点赞
+- 私信 WebSocket 实时接收 + 主动发送、会话管理
 
-### 🎯安装依赖
+### 12. 账号与权限管理
+- 注册 / 登录 / 登出，管理员按用户分配可用功能，数据按用户隔离
+
+---
+
+## 🛠 技术栈
+
+| 层级 | 技术 |
+|------|------|
+| 后端 | Python 3.11 + Flask + APScheduler |
+| 前端 | 原生 HTML / CSS / JavaScript + Chart.js（单页应用） |
+| AI 引擎 | 火山方舟 Ark API（豆包 Seed 2.0 多模态 + 文本） |
+| TTS | 阿里开源 CosyVoice-300M-SFT（本地部署，HTTP 端口 50000） |
+| 数据库 | MySQL（默认，支持 JSON 文件后端切换） |
+| 音视频处理 | FFmpeg / FFprobe |
+| 爬虫 | 抖音 Web 接口（X-Bogus / A-B / msToken 签名）、Selenium |
+| 热点雷达 | 独立子系统 trendradar（RSS 采集 + SQLite + AI 分析 + 通知推送） |
+
+---
+
+## 📁 目录结构
+
 ```
+DouYin_Spider-master/
+├── web_server.py            # Flask 主入口（Web 控制台，端口 5000）
+├── main.py                  # 命令行爬虫入口
+├── .env / .env.example      # 环境配置（Cookie / MySQL / AI Key 等）
+├── templates/               # 前端页面（index.html 主控制台 / setup.html 登录）
+├── static/                  # 静态资源（js / css / protobuf）
+├── services/                # ★ AI 业务服务层（核心）
+│   ├── storage.py           #   存储门面（JSON / MySQL 切换 + 用户隔离）
+│   ├── video_analyzer.py    #   视频多模态分析
+│   ├── video_classifier.py  #   素材视频分类 + 时间线
+│   ├── video_mashup.py      #   智能混剪
+│   ├── tts.py               #   CosyVoice TTS 合成 / 克隆
+│   ├── script_generator.py  #   AI 脚本生成
+│   ├── competitor_discovery.py  # 竞品发现（三步评估）
+│   ├── data_collector.py    #   数据采集 + 看板
+│   ├── ai_keyword.py        #   AI 关键词 + 跨赛道推荐
+│   ├── ad_advisor.py        #   投流分析
+│   ├── intent_analyzer.py   #   意向客户分析
+│   ├── price_research.py    #   竞品价格调研
+│   └── user_auth.py         #   用户认证与权限
+├── dy_apis/                 # 抖音 API 封装（搜索 / 用户 / 作品 / 直播 / 私信）
+├── dy_live/server.py        # 直播间 WebSocket 监听（独立脚本）
+├── builder/                 # 请求签名（auth / header / params / proto）
+├── utils/                   # 签名算法 + 工具函数（xbogus / ab / mstoken 等）
+├── scheduler/               # APScheduler 定时任务
+├── models/                  # dataclass 数据模型
+├── trendradar/              # 热点雷达子系统
+├── config/                  # AI 提示词 + 配置文件
+├── 量化模型/                # 宠物趋势量化预测模型
+└── datas/                   # 上传视频、混剪输出、历史 JSON 数据
+```
+
+---
+
+## 🚀 快速开始
+
+### 运行环境
+- Python 3.11+
+- MySQL 8.0+（或切换 JSON 文件后端）
+- FFmpeg（混剪 / 视频处理依赖）
+- 火山方舟 Ark API Key（AI 功能依赖）
+
+### 安装依赖
+
+```bash
 pip install -r requirements.txt
-npm install
+pip install "volcengine-python-sdk[ark]"   # Ark Runtime SDK
 ```
 
-### 🎨配置文件
-这里以小红书的cookie获取为例
+### 配置环境变量
 
-注意.env文件有两个变量，一个是打开www.douyin.com这个域名获取的，另一个是打开live.douyin.com这个域名获取的，第一个用于爬虫，第二个用于直播间监听
+复制 `.env.example` 为 `.env`，填写以下关键配置：
 
-配置文件在项目根目录.env文件中，将下图自己的登录cookie放入其中，cookie获取➡️在浏览器f12打开控制台，点击网络，点击fetch，找一个接口点开
-![image](https://github.com/user-attachments/assets/6a7e4ecb-0432-4581-890a-577e0eae463d)
-
-复制cookie到.env文件中（注意！登录抖音后的cookie才是有效的，不登陆没有用）
-![image](https://github.com/user-attachments/assets/60291f3f-9b69-423f-8b11-167278d44639)
-
-
-
-### 🚀运行项目
+```env
+DY_COOKIES='...'            # 抖音 Cookie（采集认证）
+DY_LIVE_COOKIES='...'       # 直播 Cookie（可选）
+ARK_API_KEY='...'           # 火山方舟 API Key
+AI_API_URL='https://ark.cn-beijing.volces.com/api/v3'
+AI_MODEL='doubao-seed-2-0-pro-260215'
+STORAGE_BACKEND='mysql'     # json | mysql
+MYSQL_HOST='127.0.0.1'
+MYSQL_PORT='3306'
+MYSQL_USER='root'
+MYSQL_PASSWORD=''
+MYSQL_DB='douyin_spider'
 ```
-# 数据爬取
+
+### 启动
+
+```bash
+# 主 Web 服务（端口 5000）
+python web_server.py
+```
+
+浏览器打开 http://127.0.0.1:5000
+
+可选独立脚本：
+
+```bash
+# 命令行爬虫
 python main.py
 
-# 直播间监听（弹幕 / 礼物 / 点赞等）
+# 直播间实时监听（需在 dy_live/server.py 中指定 live_id）
 python dy_live/server.py
 
-# 抖音私信实时接收
+# 私信实时接收
 python dy_apis/douyin_recv_msg.py
 ```
 
-### 🗝️注意事项
-- `main.py` 是爬虫入口，可根据需求自行修改调用
-- `dy_apis/douyin_api.py` 包含全部 API 接口封装，含直播间点赞、发消息、私信收发等
-- `dy_live/server.py` 包含直播间 WebSocket 监听逻辑
-- `dy_apis/douyin_recv_msg.py` 包含抖音私信 WebSocket 实时接收逻辑
+### TTS 配音（可选）
 
+智能混剪的配音依赖本地 CosyVoice 服务（WSL2，端口 50000），未启动时混剪配音不可用：
 
-## 🍥日志
-   
-| 日期       | 说明                                   |
-| -------- | ------------------------------------ |
-| 23/10/05 | - 项目完成。 |
-| 23/10/17 | - 首次提交。 |
-| 23/10/18 | - 监听直播间弹幕和礼物。 |
-| 23/10/21 | - 新增搜索智能排序和限制时间。 |
-| 23/10/21 | - 新增可视化界面到release v1.1.0。 |
-| 23/10/25 | - 新增issue提出的输出直播间消息时包括用户等级。 |
-| 23/10/28 | - 遇到验证码请手动点击！Fix Some Bugs。 |
-| 23/11/11 | - 修复了很多很多大家的bug~~，关于v.dy格式的url正在处理 |
-| 23/12/22 | - 修复了直播间监控 |
-| 25/06/07 | - 开放所有之前闭源的代码，包括数据爬取和直播间监听 |
-| 26/04/09 | - 修复直播间礼物信息接收（含送礼对象）；新增直播间点赞、直播间发弹幕；新增抖音私信实时接收（WebSocket）与主动发送功能 |
+```bash
+wsl -d Ubuntu-22.04 -u root -- bash -c \
+  "cd /root/CosyVoice && /root/cosyvoice_env/bin/python custom_server.py \
+   --model_dir /root/CosyVoice/pretrained_models/CosyVoice-300M-SFT --port 50000"
+```
 
-## 🤝 欢迎贡献 PR
+---
 
-本项目欢迎任何形式的贡献！如果你有新功能想法、Bug 修复或文档改进，欢迎提交 PR。
+## 🔌 外部依赖服务
 
-- Fork 本仓库并在新分支上开发
-- 保持代码风格与现有代码一致
-- PR 描述中请简要说明改动内容和目的
-- 也欢迎通过 [Issue](https://github.com/cv-cat/DouYin_Spider/issues) 提出建议或报告问题
+| 服务 | 说明 |
+|------|------|
+| 火山方舟 Ark | AI 大模型（豆包 Seed 2.0），需 `ARK_API_KEY` |
+| CosyVoice | 本地 WSL2 部署，`http://127.0.0.1:50000`，提供预置音色与克隆 |
+| MySQL | 数据存储，`127.0.0.1:3306`，库 `douyin_spider` |
+| FFmpeg | 视频截取 / 拼接 / 音视频处理 |
+| 抖音 Cookie | 采集认证（`DY_COOKIES` 等） |
 
-## 🧸额外说明
-1. 感谢star⭐和follow📰！不时更新
-2. 作者的联系方式在主页里，有问题可以随时联系我
-3. 可以关注下作者的其他项目，欢迎 PR 和 issue
-4. 感谢赞助！如果此项目对您有帮助，请作者喝一杯奶茶~~ （开心一整天😊😊）
-5. thank you~~~
+---
 
-<div align="center">
-  <img src="./author/wx_pay.png" width="400px" alt="微信赞赏码"> 
-  <img src="./author/zfb_pay.jpg" width="400px" alt="支付宝收款码">
-</div>
+## ⚠️ 免责声明
 
+本项目仅供学习与技术研究使用，严禁用于发布不良信息、违法内容。请遵守相关平台的使用条款与法律法规，使用本项目产生的一切后果由使用者自行承担。
 
-## 📈 Star 趋势
+---
 
-<a href="https://cvcat.site/star-history/svg?repos=cv-cat/DouYin_Spider&type=Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cvcat.site/star-history/svg?repos=cv-cat/DouYin_Spider&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://cvcat.site/star-history/svg?repos=cv-cat/DouYin_Spider&type=Date" />
-    <img alt="Star History Chart" src="https://cvcat.site/star-history/svg?repos=cv-cat/DouYin_Spider&type=Date" />
-  </picture>
-</a>
+## 🙏 致谢
 
-
-
-## 🍔 交流群
-
-如果你对爬虫和 AI Agent 感兴趣，请加作者主页 wx 通过邀请加入群聊
-
-ps: 请加群，人满或者过期 issue | wx 提醒
-
-| group-1 | group-2 | group-3 |
-|:--:|:--:|:--:|
-| <img width="280" alt="group1" src="https://cvcat.site/assets/group1.jpg" /> | <img width="280" alt="group2" src="https://cvcat.site/assets/group2.jpg" /> | <img width="280" alt="group3" src="https://cvcat.site/assets/group3.jpg" /> |
+本项目基于开源项目 [DouYin_Spider](https://github.com/cv-cat/Douyin_Spider) 二次开发，感谢原作者的开源贡献。
